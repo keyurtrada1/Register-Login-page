@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   {% if messages %}
+   {% for msg in messages %}
+   <p>{{ msg }}</p>
+   {% endfor %}
+   {% endif %}
+   <form method="post" action="/fetchregdata">
+       {% csrf_token %}\
+       Name : <input type="text" name="username"><br/>
+       Email : <input type="email" name="useremail"><br/>
+       Phone : <input type="tel" name="userphone"><br/>\
+       Password : <input type="password" name="userpass"><br/>
+       <input type="submit" name="submit">
+   </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Logoin page</h1>
+{% if messages %}
+{% for msg in messages %}
+<p>{{ msg }}</p>
+{% endfor %}
+{% endif %}
+<form method="post" action="/fetchlogindata">
+    {% csrf_token %}
+    Email : <input type="email" name="useremail"><br/>
+    Password : <input type="password" name="userpass"><br/>
+    <input type="submit" name="submit">
+
+</form>
+
+</body>
+</html>
